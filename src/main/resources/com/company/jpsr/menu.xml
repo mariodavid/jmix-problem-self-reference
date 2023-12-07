@@ -4,7 +4,6 @@
     <menu id="application" title="msg://com.company.jpsr/menu.application.title" opened="true">
         <item view="User.list" title="msg://com.company.jpsr.view.user/UserListView.title"/>
         <item view="Employee.list" title="msg://com.company.jpsr.view.employee/employeeListView.title"/>
-        <item view="Employee.virtualList" title="msg://com.company.jpsr.view.employee/employeeVirtualListView.title"/>
     </menu>
 
 </menu-config>
