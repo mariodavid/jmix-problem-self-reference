@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://employeeVirtualListView.title"
+      focusComponent="employeesDataGrid">
+    <data>
+        <collection id="employeesDc"
+                    class="com.company.jpsr.entity.Employee">
+            <fetchPlan extends="_base">
+                <property name="manager" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="employeesDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Employee e
+                    where e.manager is null]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <vbox id="wrapper" width="100%" height="100%"/>
+    </layout>
+</view>
