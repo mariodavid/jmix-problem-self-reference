@@ -1,13 +1,6 @@
+# Jmix Problem: Self reference
 
-
-
-### DB Content
-In the DB we have the relationships:
-- employee 1 has no manager
-- employee 2 has employee 1 as manager
-- employee 3 has employee 2 as manager
-
-![](/img/db-content.png)
+This example shows a problem with lazy loading in Jmix.
 
 
 ## Problem
@@ -38,6 +31,15 @@ public class Employee {
     private Employee report;
 }
 ```
+
+
+### DB Content
+In the DB we have the relationships:
+- employee 1 has no manager
+- employee 2 has employee 1 as manager
+- employee 3 has employee 2 as manager
+
+![](/img/db-content.png)
 
 ### Test
 
