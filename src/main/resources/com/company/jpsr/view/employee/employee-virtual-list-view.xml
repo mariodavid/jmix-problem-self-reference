@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
       title="msg://employeeVirtualListView.title"
       focusComponent="employeesDataGrid">
     <data>
         <collection id="employeesDc"
                     class="com.company.jpsr.entity.Employee">
             <fetchPlan extends="_base">
-                <property name="manager" fetchPlan="_base"/>
+                <property name="report" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="employeesDl" readOnly="true">
                 <query>
-                    <![CDATA[select e from Employee e
-                    where e.manager is null]]>
+                    <![CDATA[select e from Employee e where e.manager is null]]>
                 </query>
             </loader>
         </collection>
